@@ -49,11 +49,11 @@
 		$blackout = $('#fvpp-blackout');
 
 		if (!getCookie('fvpp' + settings.cookieName)) {
-			showMessage();
+			window.setTimeout(showMessage, settings.delay);
 		}
 
-		$(settings.showAgainSelector).on('click', showMessage);
-		$body.on('click', '#fvpp-blackout, #fvpp-close', hideMessage);
+		$(settings.showAgainSelector).bind('click', showMessage);
+		$body.bind('click', '#fvpp-blackout, #fvpp-close', hideMessage);
 
 	};
 
